@@ -1,21 +1,18 @@
 #!/usr/bin/python3
+"""
+ save items to a file.
+"""
 
-"""This module contains a script that Deserialize
-a JSON file, append to its content, and save the result"""
+import sys
+import os.path
 
+args = sys.argv[1:]
 
-from json import load
-from sys import argv
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-my_args = argv[1:]
-try:
-    my_list = load_from_json_file("add_item.json")
-except FileNotFoundError:
-    my_list = []
+item = []
+if os.path.exists("./add_item.json"):
+    item = load_from_json_file("add_item.json")
 
-for arg in my_args:
-    my_list.append(arg)
-
-save_to_json_file(my_list, "add_item.json")
+save_to_json_file(item + args, "add_item.json")

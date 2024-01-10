@@ -1,4 +1,6 @@
-eads from standard input and computes metrics
+#!/usr/bin/python3
+"""
+Read and computes metrics
 """
 
 
