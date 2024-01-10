@@ -1,4 +1,6 @@
-s module contains a function that convert a python object to JSON"""
+#!/usr/bin/python3
+
+"""This module contains a function that convert a python object to JSON"""
 
 
 from json import dump

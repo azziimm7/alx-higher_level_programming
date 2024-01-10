@@ -1,4 +1,6 @@
-s module contains a function that returns the
+#!/usr/bin/python3
+
+"""This module contains a function that returns the
 dictionary description of an object"""
 
 

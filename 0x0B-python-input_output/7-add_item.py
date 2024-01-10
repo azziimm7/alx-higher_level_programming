@@ -1,4 +1,6 @@
-s module contains a script that Deserialize
+#!/usr/bin/python3
+
+"""This module contains a script that Deserialize
 a JSON file, append to its content, and save the result"""
 
 

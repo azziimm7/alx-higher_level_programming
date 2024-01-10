@@ -1,4 +1,6 @@
-s module contains a function that writes texts to a file"""
+#!/usr/bin/python3
+
+"""This module contains a function that writes texts to a file"""
 
 
 def write_file(filename="", text=""):

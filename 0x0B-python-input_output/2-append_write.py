@@ -1,4 +1,6 @@
-s module contains a function that writes texts to the end of a file"""
+#!/usr/bin/python3
+
+"""This module contains a function that writes texts to the end of a file"""
 
 
 def append_write(filename="", text=""):

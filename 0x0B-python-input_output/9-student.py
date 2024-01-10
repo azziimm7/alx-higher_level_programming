@@ -1,4 +1,6 @@
-s module contains a class called Student"""
+#!/usr/bin/python3
+
+"""This module contains a class called Student"""
 
 
 class Student:

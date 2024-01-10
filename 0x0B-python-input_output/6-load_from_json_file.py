@@ -1,4 +1,6 @@
-s module contains a function that Deserialize
+#!/usr/bin/python3
+
+"""This module contains a function that Deserialize
 a JSON file to a python object"""
 
 
