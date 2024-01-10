@@ -1,4 +1,6 @@
-s module contains a function that prints the content of a file"""
+#!/usr/bin/python3
+
+"""This module contains a function that prints the content of a file"""
 
 
 def read_file(filename=""):
