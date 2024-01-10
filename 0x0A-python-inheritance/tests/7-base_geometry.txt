@@ -1,0 +1,174 @@
+===============================
+How to use "7-base_geometry.py"
+===============================
+
+----------------------------------------------------------------
+
+Importing the class:
+	>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+----------------------------------------------------------------
+
+Instantiating the BaseGeometry with any argument will raise
+a TypeError
+	>>> bg = BaseGeometry(None)
+	Traceback (most recent call last):
+		...
+	TypeError: BaseGeometry() takes no arguments
+
+----------------------------------------------------------------
+
+Case 2: Passing a string as the value
+
+=======================================================
+Testing the integer_validator(self, name, value) method
+=======================================================
+
+----------------------------------------------------------------
+
+Case 1: Passing positive integers as the value
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+	>>> bg.integer_validator("width", 89)
+
+----------------------------------------------------------------
+
+Case 2: Passing a string as the value
+	>>> bg.integer_validator("name", "John")
+	Traceback (most recent call last):
+		...
+	TypeError: name must be an integer
+
+----------------------------------------------------------------
+
+Case 3: Passing zero as the value
+	>>> bg.integer_validator("age", 0)
+	Traceback (most recent call last):
+		...
+	ValueError: age must be greater than 0
+
+----------------------------------------------------------------
+
+Case 4: Passing a negative value
+	>>> bg.integer_validator("distance", -4)
+	Traceback (most recent call last):
+		...
+	ValueError: distance must be greater than 0
+
+----------------------------------------------------------------
+
+Case 5: Passing a boolean value will raise a type error although
+	it is a subclass of the integer class:
+
+	>>> bg.integer_validator("bool", True)
+	Traceback (most recent call last):
+		...
+	TypeError: bool must be an integer
+
+----------------------------------------------------------------
+
+case 6: Passing a float as the value
+	>>> bg.integer_validator("nb", 3.5)
+	Traceback (most recent call last):
+		...
+	TypeError: nb must be an integer
+
+----------------------------------------------------------------
+
+case 6: Passing a tuple as the value
+	>>> bg.integer_validator("tp", (3, 4))
+	Traceback (most recent call last):
+		...
+	TypeError: tp must be an integer
+
+----------------------------------------------------------------
+
+case 7: Passing a list as the value
+	>>> bg.integer_validator("ls", [1, 2])
+	Traceback (most recent call last):
+		...
+	TypeError: ls must be an integer
+
+----------------------------------------------------------------
+
+case 8: Passing None as the value
+	>>> bg.integer_validator("Var", None)
+	Traceback (most recent call last):
+		...
+	TypeError: Var must be an integer
+
+----------------------------------------------------------------
+
+case 9: Passing a dict as the value
+	>>> bg.integer_validator("A dict", {"dict": 1})
+	Traceback (most recent call last):
+		...
+	TypeError: A dict must be an integer
+
+----------------------------------------------------------------
+
+case 10: Passing a set as the value
+	>>> bg.integer_validator("A dict", {1, 2})
+	Traceback (most recent call last):
+		...
+	TypeError: A dict must be an integer
+
+----------------------------------------------------------------
+
+
+
+case 11: Calling the method with no arguments
+	>>> bg.integer_validator()
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+----------------------------------------------------------------
+
+case 12: Calling the method with one argument
+	>>> bg.integer_validator("one arg")
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+----------------------------------------------------------------
+
+case 13: Calling the method with more than 2 arguments
+	>>> bg.integer_validator("arg2", 3, 4)
+	Traceback (most recent call last):
+		...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+----------------------------------------------------------------
+
+
+case 14: The method assumes the `name` parameter is a string
+	 but will print the parameter even if it is not
+	>>> bg.integer_validator({'A': 'dict'}, {"dict": 1})
+	Traceback (most recent call last):
+		...
+	TypeError: {'A': 'dict'} must be an integer
+
+----------------------------------------------------------------
+
+=======================================================
+Testing the area(self) method
+=======================================================
+
+----------------------------------------------------------------
+
+Case 1: Calling the method will raise an exception
+	>>> bg.area()
+	Traceback (most recent call last):
+		...
+	Exception: area() is not implemented
+
+----------------------------------------------------------------
+
+Case 2: Calling the method with any number of arguments will raise an exception
+	>>> bg.area(None)
+	Traceback (most recent call last):
+		...
+	TypeError: area() takes 1 positional argument but 2 were given
+
+----------------------------------------------------------------
