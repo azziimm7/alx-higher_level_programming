@@ -1,13 +1,26 @@
 #!/usr/bin/python3
-"""This module contains class city"""
+
+"""
+Create the class City that will map to a table of the same name
+in the database
+
+ Args:
+    Base: The base class from which the City classe should inherit.
+"""
+from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base, State
+
+Base = declarative_base()
 
 
 class City(Base):
-    """A class city that represents table"""
+    """ A class that contains information about cities
+        Args:
+            id (int): The city id
+            name (str): The city's name
+            stat_id (int): The state id that correspond to this city
+    """
     __tablename__ = 'cities'
-    id = Column(Integer, autoincrement=True, primary_key=True,
-                unique=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    state_id = Column(Integer, ForeignKey("states.id"), nullable=False)
+    state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
